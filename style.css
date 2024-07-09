@@ -1,0 +1,170 @@
+:root {
+    --primary: #FFCE00;
+    --secondary: #FE4880;
+    --dark: #212121;
+    --light: #F3F3F3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #acbac6;
+}
+
+.card {
+    margin: 0 auto 0;
+    width: 400px;
+    height: 600px;
+    perspective: 1000px;
+}
+
+.card__inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card__inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card__face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0px 3px 18px 3px RGBA(0,0,0,0.2);
+}
+
+.card__face--front {
+    background-image: linear-gradient(to bottom right, var(--primary),var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__face--front h2 {
+    color: #FFF;
+    font-size: 32px;
+}
+
+.card__face--back {
+    background-color: var(--light);
+    transform: rotateY(180deg);
+}
+
+.card__content {
+    width: 100%;
+    height: 100%;
+}
+
+.card__header {
+    position: relative;
+    padding: 30px 30px 40px;
+}
+
+.card__header:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 0 0 35% 0 ;
+    background-image: linear-gradient(to bottom right, var(--primary) 10% ,var(--secondary) 115%);
+}
+
+.pp {
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    border: 3px solid var(--dark);
+    object-fit: cover;
+}
+
+.card__header h2 {
+    color: var(--dark);
+    font-size: 30px;
+    font-weight: 625;
+    text-align: center;
+}
+
+.card__body {
+    padding: 30px;
+}
+
+.card__body h3 {
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 0 10px 0;
+}
+
+.card__body p {
+    color: var(--dark);
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.home {
+    background: var(--dark);
+    border-radius: 0 0 50% 0;
+    margin-bottom: 30px;
+}
+
+.home h1 {
+    padding: 20px;
+    font-size: 45px;
+    font-family: Bungee Spice;
+}
+
+.home__flip {
+    background-color: var(--light);
+    height: 380px;
+    width: 250px;
+    margin-left: 30px;
+    display: block;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0px 3px 18px 3px RGBA(0,0,0,0.2);
+}
+
+.home__flip h2 {
+    padding: 10px 0 10px 0;
+    margin: auto;
+    background: linear-gradient(180deg, var(--primary), #d12d21);
+    border-radius: 16px 16px 2px 2px;
+    color: var(--dark)
+
+}
+
+.home__flip img {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 8px 0px RGBA(0,0,0,0.2);
+    border-radius: 16px 16px 16px 16px;
+    height: 75%;
+}
+
+.back--button {
+    padding: 10px;
+    filter: invert(0.97) 
+}
