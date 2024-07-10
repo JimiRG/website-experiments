@@ -1,13 +1,16 @@
+const transitionTimeout = 300
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const card = document.querySelector('.card__inner');
+    const cards = document.querySelectorAll('.card__inner');
     const homeFlip = document.querySelector('.home__flip')
         
-    if (card) {
-        card.addEventListener('click', function () {
-            card.classList.toggle('is-flipped')
-        });
+    if (cards) {
+        cards.forEach((card) => {
+            card.addEventListener('click', function () {
+                card.classList.toggle('is-flipped')
+            });
+        })
         }
 
     if (homeFlip) {
@@ -17,5 +20,29 @@ document.addEventListener('DOMContentLoaded', function () {
         }    
 })
 
+window.onload = () => {
+    const transition_el = document.querySelector('.transition');
+    const anchors = document.querySelectorAll('a');
+
+    setTimeout(() => {
+        transition_el.classList.remove('is-active')
+    }, transitionTimeout);
+
+
+    for (let i = 0; i < anchors.length; i++) {
+        const anchor = anchors[i]
+        anchor.addEventListener('click', e => {
+            e.preventDefault();
+            let target = e.target.href;
+            
+            transition_el.classList.add('is-active');
+
+            setTimeout(() => {
+                window.location.href = target;
+            }, transitionTimeout);
+        })
+    }
+
+};
 
 

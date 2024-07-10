@@ -5,18 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Flipping</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="transitions.css">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="home">
-        <h1>Jimi's experiments</h1>
-    </div>
+
+<div class="transition transition-2 is-active"></div>
+
+<div class="page">
+
+    <header>
+        <nav>
+            <div class="title">
+            <img src="img/pp.jpeg" alt="Profile pic" class="logo">
+            <h1>Jimi Gill</h1>
+            </div>
+            <ul class="menu">
+                <li class="menu__item is-active">Home</li>
+                <li class="menu__item"><a href="flip.html">Flip</a></li>
+                <li class="menu__item">About</li>
+                <li class="menu__item">Contact</li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="home__flip">
-        <h2>Card Flipping</h2>
+        <h2>Card flipping</h2>
         <img src="img/flip.png" alt="">
     </div>
 
+</div>
+
     <script src="main.js"></script>
+
 </body>
 </html>

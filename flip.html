@@ -5,33 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Flipping</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="transitions.css">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-<a href="index.html"><img class="back--button" src="img/back.png" alt="" height="50px" width="50px"></a> 
-    <div class="card">
-        <div class="card__inner">
-            <div class="card__face card__face--front">
-                <h2>Flip me ;)</h2>
-            </div>
-            <div class="card__face card__face--back">
-                <div class="card__content">
-                    <div class="card__header">
-                        <img src="img/pp.jpeg" alt="" class="pp">
-                        <h2>Jimi Gill</h2>
+
+    <div class="transition transition-2 is-active"></div>
+
+    <div class="page">
+
+        <header>
+            <nav>
+                <div class="title">
+                <img src="img/pp.jpeg" alt="Profile pic" class="logo">
+                <h1>Jimi Gill</h1>
+                </div>
+                <ul class="menu">
+                    <li class="menu__item"><a href="index.html">Home</a></li>
+                    <li class="menu__item is-active">Flip</li>
+                    <li class="menu__item">About</li>
+                    <li class="menu__item">Contact</li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="cards">
+            <div class="card">
+                <div class="card__inner">
+                    <div class="card__face card__face--front">
+                        <h2>Flip me ;)</h2>
                     </div>
-                    <div class="card__body">
-                        <h3>Javascript Apprentice</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Mollitia totam atque animi laboriosam voluptatibus libero fugit 
-                            fuga architecto amet facere!Ducimus eum accusantium soluta molestiae 
-                            minima dicta reiciendis adipisci facere.
-                        </p>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="img/pp.jpeg" alt="" class="pp">
+                                <h2>Jimi Gill</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Javascript Apprentice</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Mollitia totam atque animi laboriosam voluptatibus libero fugit 
+                                    fuga architecto amet facere!Ducimus eum accusantium soluta molestiae.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="card">
+                <div class="card__inner">
+                    <div class="card__face card__face--front">
+                        <h2>Flip me ;)</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="img/pp.jpeg" alt="" class="pp">
+                                <h2>Jimi Gill</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Javascript Apprentice</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Mollitia totam atque animi laboriosam voluptatibus libero fugit 
+                                    fuga architecto amet facere!Ducimus eum accusantium soluta molestiae.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__inner">
+                    <div class="card__face card__face--front">
+                        <h2>Flip me ;)</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="img/pp.jpeg" alt="" class="pp">
+                                <h2>Jimi Gill</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Javascript Apprentice</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Mollitia totam atque animi laboriosam voluptatibus libero fugit 
+                                    fuga architecto amet facere!Ducimus eum accusantium soluta molestiae.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 <script src="main.js"></script>
 </body>
