@@ -54,7 +54,7 @@ nav .menu {
     margin-right: 100px;
 }
 
-nav .menu .menu__item {
+nav .menu .menu_item {
     display: block;
     padding: 5px 15px;
     margin-left: 5px;
@@ -66,7 +66,7 @@ nav .menu .menu__item {
     border-bottom: 3px solid transparent;
 }
 
-nav .menu .menu__item:hover {
+nav .menu .menu_item:hover {
     color: orange;
     border-color: orange;
 }
@@ -100,7 +100,7 @@ nav a {
     perspective: 1000px;
 }
 
-.card__inner {
+.card_inner {
     width: 100%;
     height: 100%;
     transition: transform 1s;
@@ -109,13 +109,13 @@ nav a {
     position: relative;
 }
 
-.card__inner.is-flipped {
+.card_inner.is-flipped {
     transform: rotateY(180deg);
     transition: transform 0.5s ease-out;
 
 }
 
-.card__face {
+.card_face {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -126,34 +126,34 @@ nav a {
     box-shadow: 0px 3px 18px 3px RGBA(0,0,0,0.2);
 }
 
-.card__face--front {
+.card_face-front {
     background-image: linear-gradient(to bottom right, var(--primary),var(--secondary));
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.card__face--front h2 {
+.card_face-front h2 {
     color: #FFF;
     font-size: 32px;
 }
 
-.card__face--back {
+.card_face-back {
     background-color: var(--light);
     transform: rotateY(180deg);
 }
 
-.card__content {
+.card_content {
     width: 100%;
     height: 100%;
 }
 
-.card__header {
+.card_header {
     position: relative;
     padding: 30px 30px 40px;
 }
 
-.card__header:after {
+.card_header:after {
     content: '';
     display: block;
     position: absolute;
@@ -176,43 +176,44 @@ nav a {
     object-fit: cover;
 }
 
-.card__header h2 {
+.card_header h2 {
     color: var(--dark);
     font-size: 30px;
     font-weight: 625;
     text-align: center;
 }
 
-.card__body {
+.card_body {
     padding: 30px;
 }
 
-.card__body h3 {
+.card_body h3 {
     color: var(--dark);
     font-size: 18px;
     font-weight: 600;
     padding: 0 0 10px 0;
 }
 
-.card__body p {
+.card_body p {
     color: var(--dark);
     font-size: 18px;
     line-height: 1.5;
 }
 
+.back-button {
+    padding: 25px;
+    filter: invert(1) 
+}
+
 .home {
-    background: var(--dark);
-    border-radius: 0 0 50% 0;
-    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;    
 }
 
-.home h1 {
-    padding: 20px;
-    font-size: 45px;
-    font-family: Bungee Spice;
-}
-
-.home__flip {
+.home_card {
     background-color: var(--light);
     height: 380px;
     width: 250px;
@@ -223,7 +224,7 @@ nav a {
     box-shadow: 0px 3px 18px 3px RGBA(0,0,0,0.2);
 }
 
-.home__flip h2 {
+.home_card h2 {
     padding: 10px 0 10px 0;
     margin: auto;
     background: linear-gradient(180deg, var(--primary), #d12d21);
@@ -234,7 +235,7 @@ nav a {
 
 }
 
-.home__flip img {
+.home_card.flip img {
     display: block;
     margin-top: 20px;
     margin-left: auto;
@@ -244,8 +245,75 @@ nav a {
     height: 75%;
 }
 
-.back--button {
-    padding: 25px;
-    filter: invert(1) 
+.home_card.listeners img {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 65%;
 }
 
+.home_card.effects img {
+    display: block;
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 55%;
+}
+
+svg {
+    width: 0;
+    height: 0;
+}
+
+#scary {
+    padding-left: 30px;
+}
+
+#scary_button {
+    font-size: 35px;
+    height: 200px;
+    width: 400px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-image: url(img/happy.jpg);
+    background-size: contain;
+}
+
+#scary_button-text {
+    font-family: Merienda;
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--secondary)
+}
+
+#scary_button.mouse-on {
+    background-image: url(img/horror.jpg);
+    background-size: contain;
+}
+
+#scary_button-text.flame-on {
+    font-family: Creepster;
+    font-size: 75px;
+    color: #ffeb4b;
+    text-shadow: 0 0 20px #f62817, 0 0 40px #f62817, 0 0 60px #f62817, 0 0 80px #f62817, 0 0 100px #f62817;
+    filter: url(#flames);
+}
+
+
+.fire {
+    padding-top: 10rem;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    filter: url(#flame);
+}
+
+.fire div {
+    font-family: Creepster;
+    font-size: 10rem;
+    position: relative;
+    color: #ffeb4b;
+    text-shadow: 0 0 20px #f62817, 0 0 50px #f62817, 0 0 100px #f62817, 0 0 150px #f62817, 0 0 200px #f62817;
+    -webkit-box-reflect: below -50px linear-gradient(transparent, #0006);
+}

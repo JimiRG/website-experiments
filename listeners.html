@@ -22,30 +22,29 @@
             <h1 id ="banner">Jimi Gill</h1>
             </div>
             <ul class="menu">
-                <li class="menu_item is-active">Home</li>
+                <li class="menu_item"><a href="index.html">Home</a></li>
                 <li class="menu_item"><a href="flip.html">Flip</a></li>
-                <li class="menu_item"><a href="listeners.html">Listeners</a></li>
+                <li class="menu_item is-active">Listeners</li>
                 <li class="menu_item"><a href="effects.html">Effects</a></li>
                 <li class="menu_item">About</li>
             </ul>
         </nav>
     </header>
-
-    <section class="home">
-        <div class="home_card flip">
-            <h2>Card flipping</h2>
-            <img src="img/flip.png" alt="">
-        </div>
-        <div class="home_card listeners">
-            <h2>Event listeners</h2>
-            <img src="img/listening.png" alt="">
-        </div>
-        <div class="home_card effects">
-            <h2>Effects</h2>
-            <img src="img/effects.png" alt="">
-        </div>        
-    </section>
     
+    <div id="scary">
+    <button id="scary_button"><h4 id="scary_button-text">Click me</h1></button>
+    </div>
+
+    <svg>
+        <filter id="flames">
+            <feTurbulence id="turbulence" baseFrequency="0.1 0.1" numOctaves="3" seed="4">
+                <animate attributeName="baseFrequency" dur="5s" values="0.1 0.1; 0.14 0.14" repeatCount="indefinite">
+                </animate>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="7">
+            </feDisplacementMap>
+        </filter>
+    </svg>
 
 </div>
 
