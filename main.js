@@ -6,9 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const homeFlip = document.querySelector('.home_card.flip')
     const homeListen = document.querySelector('.home_card.listeners')
     const homeEffect = document.querySelector('.home_card.effects')
+    const scaryDiv = document.getElementById('scary')
     const scaryButton = document.getElementById('scary_button')
     const scaryText = document.getElementById('scary_button-text')
     var scarySound = new Audio("sounds/scary.mp3")
+    var cashSound = new Audio("sounds/money.wav")
         
     if (cards) {
         cards.forEach((card) => {
@@ -39,18 +41,33 @@ document.addEventListener('DOMContentLoaded', function () {
         );
     };
 
-    if (scaryButton) {
-        scaryButton.addEventListener('mouseover', function () {
+    if (scaryDiv) {
+        scaryDiv.addEventListener('mouseenter', function () {
             scaryText.innerHTML = "If you dare";
-            scaryButton.classList.toggle('mouse-on');
-            scaryText.classList.toggle('flame-on');
+            scaryButton.classList.add('mouse-on');
+            scaryText.classList.add('flame-on');
             scarySound.play();
         });
-        scaryButton.addEventListener('mouseout', function () {
+        scaryDiv.addEventListener('mouseleave', function () {
             scaryText.innerHTML = "Click me";
-            scaryButton.classList.toggle('mouse-on');
-            scaryText.classList.toggle('flame-on');
+            scaryButton.classList.remove('mouse-on');
+            scaryText.classList.remove('flame-on');
+            scaryButton.classList.remove('clicked');
+            scaryText.classList.remove('clicked');
             scarySound.pause();
+            scarySound.currentTime = 0;
+            cashSound.pause();
+            cashSound.currentTime = 0;
+        });
+        scaryDiv.addEventListener('click', function () {
+            scaryText.innerHTML = "You've won $1000";
+            scaryButton.classList.remove('mouse-on');
+            scaryText.classList.remove('flame-on');
+            scaryButton.classList.add('clicked');
+            scaryText.classList.add('clicked');
+            scarySound.pause();
+            scarySound.currentTime = 0;
+            cashSound.play();
         });
     }
     
